@@ -19,8 +19,9 @@ youtube link: [from 0 to production](https://www.youtube.com/watch?v=d5x0JCZbAJs
 
 ## todo
 
-- [X] make it deploy (vercel)
-- [X] scaffold basic ui with mock data
+- [x] make it deploy (vercel)
+- [x] scaffold basic ui with mock data
+- [x] tidy up build process
 - [ ] actually set up a database (vercel postgres)
 - [ ] attach database to ui
 - [ ] add authentication (w/ clerk )
