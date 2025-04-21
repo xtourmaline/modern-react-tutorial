@@ -16,6 +16,8 @@ youtube link: [from 0 to production](https://www.youtube.com/watch?v=d5x0JCZbAJs
 - topnav fits in layout.tsx because we want it in other pages
     - layout applies consecutively
     - first layout applies on the first layer and then next one gets uploaded next
+- never share any secret codes because that can be a liability since they can get into the database
+
 
 ## todo
 
