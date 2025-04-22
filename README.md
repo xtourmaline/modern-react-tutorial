@@ -18,6 +18,11 @@ youtube link: [from 0 to production](https://www.youtube.com/watch?v=d5x0JCZbAJs
     - first layout applies on the first layer and then next one gets uploaded next
 - never share any secret codes because that can be a liability since they can get into the database
 - good to have a different dev and production environment so that when changes are made, it does not break production
+- should check on page if user should be able to load data
+- when folder with underscore is in app, it tells the app not to include in routing
+- authentication:
+    - ```<SignedOut>``` will render what users should see when signed out
+    - ```<SignedIn>```will render what users should see when signed in
 
 
 ## todo
@@ -27,7 +32,7 @@ youtube link: [from 0 to production](https://www.youtube.com/watch?v=d5x0JCZbAJs
 - [x] tidy up build process
 - [x] actually set up a database (vercel postgres)
 - [x] attach database to ui
-- [ ] add authentication (w/ clerk)
+- [x] add authentication (w/ clerk)
 - [ ] add image upload
 - [ ] error management (w/ sentry)
 - [ ] routing/image page (parallel route)
