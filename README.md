@@ -14,26 +14,29 @@ youtube link: [from 0 to production](https://www.youtube.com/watch?v=d5x0JCZbAJs
 - hosting files from public directory have potential issues because of bandwidth usage
   - use a service that does not charge for bandwidth like ``uploadthing.com``
 - topnav fits in layout.tsx because we want it in other pages
-    - layout applies consecutively
-    - first layout applies on the first layer and then next one gets uploaded next
+  - layout applies consecutively
+  - first layout applies on the first layer and then next one gets uploaded next
 - never share any secret codes because that can be a liability since they can get into the database
 - good to have a different dev and production environment so that when changes are made, it does not break production
 - should check on page if user should be able to load data
 - when folder with underscore is in app, it tells the app not to include in routing
 - authentication:
-    - ```<SignedOut>``` will render what users should see when signed out
-    - ```<SignedIn>```will render what users should see when signed in
-
+  - ``<SignedOut>`` will render what users should see when signed out
+  - ``<SignedIn>``will render what users should see when signed in
+- auth call in uploadthing is now async, so i had to add await auth()
+- the uploadthing npm package had a bewildering bug with a known and defined value being "undefined" when executing in the code. the solution ended up being downgrading a bunch of packages to the versions matching in the video, and alongside that, changing some small things to work with the older versions.
 
 ## todo
 
-- [x] make it deploy (vercel)
-- [x] scaffold basic ui with mock data
-- [x] tidy up build process
-- [x] actually set up a database (vercel postgres)
-- [x] attach database to ui
-- [x] add authentication (w/ clerk)
-- [ ] add image upload
+- [X] make it deploy (vercel)
+- [X] scaffold basic ui with mock data
+- [X] tidy up build process
+- [X] actually set up a database (vercel postgres)
+- [X] attach database to ui
+- [X] add authentication (w/ clerk)
+- [X] add image upload
+- [ ] "taint" (server-only)
+- [ ] use next/image component
 - [ ] error management (w/ sentry)
 - [ ] routing/image page (parallel route)
 - [ ] delete button (w/ server actions)

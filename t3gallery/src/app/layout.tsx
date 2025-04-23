@@ -1,11 +1,18 @@
 import "~/styles/globals.css";
+import "@uploadthing/react/styles.css";
+
 
 import { ClerkProvider } from "@clerk/nextjs";
 
 import { TopNav } from "./_components/topnav";
 
+
 import { type Metadata } from "next";
-import { Geist } from "next/font/google";
+//import { Geist } from "next/font/google";
+import { Inter } from "next/font/google";
+import { extractRouterConfig } from "uploadthing/server";
+import { ourFileRouter } from "./api/uploadthing/core";
+import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 
 export const metadata: Metadata = {
   title: "A tutorial app",
@@ -13,9 +20,14 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
-const geist = Geist({
+//const geist = Geist({
+//  subsets: ["latin"],
+//  variable: "--font-geist-sans",
+//});
+
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-geist-sans",
+  variable: "--font-sans",
 });
 
 export default function RootLayout({
@@ -23,9 +35,20 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <ClerkProvider>
-      <html lang="en" className={`${geist.variable} flex flex-col gap-4`}>
-        <TopNav/>
-        <body>{children}</body>
+      <html lang="en">
+        <NextSSRPlugin
+          /**
+           * The `extractRouterConfig` will extract **only** the route configs
+           * from the router to prevent additional information from being
+           * leaked to the client. The data passed to the client is the same
+           * as if you were to fetch `/api/uploadthing` directly.
+           */
+          routerConfig={extractRouterConfig(ourFileRouter)}
+        />
+        <body className={`${inter.variable} flex flex-col gap-4`}>
+          <TopNav />
+          {children}
+        </body>
       </html>
     </ClerkProvider>
   );
