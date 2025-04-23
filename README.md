@@ -25,6 +25,7 @@ youtube link: [from 0 to production](https://www.youtube.com/watch?v=d5x0JCZbAJs
   - ``<SignedIn>``will render what users should see when signed in
 - auth call in uploadthing is now async, so i had to add await auth()
 - the uploadthing npm package had a bewildering bug with a known and defined value being "undefined" when executing in the code. the solution ended up being downgrading a bunch of packages to the versions matching in the video, and alongside that, changing some small things to work with the older versions.
+- 
 
 ## todo
 
@@ -35,7 +36,7 @@ youtube link: [from 0 to production](https://www.youtube.com/watch?v=d5x0JCZbAJs
 - [X] attach database to ui
 - [X] add authentication (w/ clerk)
 - [X] add image upload
-- [ ] "taint" (server-only)
+- [X] "taint" (server-only)
 - [ ] use next/image component
 - [ ] error management (w/ sentry)
 - [ ] routing/image page (parallel route)
