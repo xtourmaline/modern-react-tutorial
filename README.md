@@ -44,6 +44,6 @@ youtube link: [from 0 to production](https://www.youtube.com/watch?v=d5x0JCZbAJs
 - [X] routing/image page (parallel route)
 - [X] Update upload button to be less cringe
 - [X] ShadUIify (specifically toasts)
-- [ ] delete button (w/ server actions)
 - [ ] analytics (posthog)
+- [ ] delete button (w/ server actions)
 - [ ] ratelimiting (upstash)

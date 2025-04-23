@@ -3,6 +3,7 @@ import "@uploadthing/react/styles.css";
 
 
 import { ClerkProvider } from "@clerk/nextjs";
+import { PostHogProvider } from "./_analytics/providers";
 
 import { TopNav } from "./_components/topnav";
 import { Toaster } from "~/components/ui/sonner";
@@ -14,6 +15,7 @@ import { Inter } from "next/font/google";
 import { extractRouterConfig } from "uploadthing/server";
 import { ourFileRouter } from "./api/uploadthing/core";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
+import posthog from "posthog-js";
 
 export const metadata: Metadata = {
   title: "A tutorial app",
@@ -40,6 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
+      <PostHogProvider>
       <html lang="en">
         <NextSSRPlugin
           routerConfig={extractRouterConfig(ourFileRouter)}
@@ -54,6 +57,7 @@ export default function RootLayout({
           <Toaster />
         </body>
       </html>
+      </PostHogProvider>
     </ClerkProvider>
   );
 }
