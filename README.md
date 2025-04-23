@@ -39,7 +39,7 @@ youtube link: [from 0 to production](https://www.youtube.com/watch?v=d5x0JCZbAJs
 - [X] "taint" (server-only)
 - [X] use next/image component
 - [X] error management (w/ sentry)
-- [ ] routing/image page (parallel route)
+- [X] routing/image page (parallel route)
 - [ ] delete button (w/ server actions)
 - [ ] analytics (posthog)
 - [ ] ratelimiting (upstash)
