@@ -5,6 +5,7 @@ import "@uploadthing/react/styles.css";
 import { ClerkProvider } from "@clerk/nextjs";
 
 import { TopNav } from "./_components/topnav";
+import { Toaster } from "~/components/ui/sonner";
 
 
 import { type Metadata } from "next";
@@ -41,12 +42,6 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <NextSSRPlugin
-          /**
-           * The `extractRouterConfig` will extract **only** the route configs
-           * from the router to prevent additional information from being
-           * leaked to the client. The data passed to the client is the same
-           * as if you were to fetch `/api/uploadthing` directly.
-           */
           routerConfig={extractRouterConfig(ourFileRouter)}
         />
         <body className={`font-sans ${inter.variable} dark`}>
@@ -56,6 +51,7 @@ export default function RootLayout({
             {modal}
           </div>
           <div id="modal-root" />
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>

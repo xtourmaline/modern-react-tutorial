@@ -27,6 +27,7 @@ youtube link: [from 0 to production](https://www.youtube.com/watch?v=d5x0JCZbAJs
 - the uploadthing npm package had a bewildering bug with a known and defined value being "undefined" when executing in the code. the solution ended up being downgrading a bunch of packages to the versions matching in the video, and alongside that, changing some small things to work with the older versions.
 - using next/image allows the server to optimize the image by filesize, thereby reducing the amount of data that needs to be sent to the user without any noticable issues when zoomed out
 - main page layout looks very differently sized, this is because of the grid layout requirements. fixing it wasn't extremely important but it is a difference thats notable from the video.
+- each toast that opens from onUploadBegin shares the id state, so multiple uploads at once can share the same id name across multiple toasts.
 
 ## todo
 
